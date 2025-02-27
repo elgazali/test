@@ -4,7 +4,7 @@ metadata:
   name: hello-world-1-app
   namespace: argocd
 spec:
-  project: default
+  project: hello-world-project
   destination:
     namespace: hello-world-1-ns  #update namespace name if you wish
     name: in-cluster   #update cluster name if its different
