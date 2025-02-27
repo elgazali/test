@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello-world-3-app
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    namespace: hello-world-3-ns  #update namespace name if you wish
+    name: in-cluster   #update cluster name if its different
+  source:
+    repoURL: 'https://github.com/elgazali/test'  #replace with your username
+    path: charts/hello-world-3
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml       #any custom value file you want to apply.
+        - values-1.yaml

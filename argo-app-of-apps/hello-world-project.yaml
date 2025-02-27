@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: hello-world-project
+  namespace: argocd
+spec:
+  description: Project for app of apps hello-world-app-of-apps GitOps
+  destinations:
+    - namespace: '*'# this allows all ns, to disallow certain ns use '!ns' for example namespace: '!istio-system'
+      server: '*'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  sourceRepos:
+    - '*'
