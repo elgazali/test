@@ -15,4 +15,4 @@ spec:
     helm:
       valueFiles:
         - values.yaml       #any custom value file you want to apply.
-        - values-1.yaml
+        - ../../values/values-1.yaml
